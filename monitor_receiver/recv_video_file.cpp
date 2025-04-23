@@ -38,7 +38,6 @@ static void handle_video_data(const char* msg, uint32_t msg_size)
 
     uint16_t segment_idx = 0;
     memcpy(&segment_idx, msg, 2);
-    printf("Segment idx:%u\n", segment_idx);
     fwrite(msg + 2, msg_size - 2, 1, video_file);
 }
 

@@ -55,7 +55,6 @@ void close_mqtt_client()
 
 int send_data(const char* data, unsigned data_size)
 {
-    printf("lhood data_size:%u\n", data_size);
     if (data_size > 4 * 1024)
     {
         printf("data size is too long(> 4 * 1024)\n");
@@ -147,6 +146,10 @@ int send_file(const char* file_name)
     {
         ++retry_times;
         printf("Try to send data end again:%u ret:%d\n", retry_times, publish_ret);
+    }
+    if (retry_times > 3)
+    {
+        printf("Send data send failed\n");
     }
 
     close(fd);

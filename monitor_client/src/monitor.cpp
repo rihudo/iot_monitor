@@ -97,7 +97,6 @@ int start_monitor(uint8_t fps, uint32_t duration)
                     count = 0;
                     it_is_time = true;
                 }
-                printf("lhood notify %u\n", count);
             }
         }
     });
@@ -113,9 +112,9 @@ int start_monitor(uint8_t fps, uint32_t duration)
     uint32_t timer_count = 0;
     for (;!is_stoped;)
     {
-        snprintf(file_name, sizeof(file_name), "./%ld.avi", time(NULL));
-        printf("File name:/%s\n", file_name);
-        writer.open(file_name, cv::VideoWriter::fourcc('M', 'J', 'P', 'G'), fps, src.size(), src.type() == CV_8UC3);
+        snprintf(file_name, sizeof(file_name), "./%ld.mp4", time(NULL));
+        printf("File name:%s\n", file_name);
+        writer.open(file_name, cv::VideoWriter::fourcc('m', 'p', '4', 'v'), fps, src.size(), src.type() == CV_8UC3);
         if (!writer.isOpened())
         {
             printf("Failed to open video writer\n");
