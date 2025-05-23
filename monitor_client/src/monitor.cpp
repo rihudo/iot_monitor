@@ -114,7 +114,7 @@ int start_monitor(uint8_t fps, uint32_t duration)
     {
         snprintf(file_name, sizeof(file_name), "./%ld.mp4", time(NULL));
         printf("File name:%s\n", file_name);
-        writer.open(file_name, cv::VideoWriter::fourcc('m', 'p', '4', 'v'), fps, src.size(), src.type() == CV_8UC3);
+        writer.open(file_name, cv::VideoWriter::fourcc('a', 'v', 'c', '1'), fps, src.size(), src.type() == CV_8UC3);
         if (!writer.isOpened())
         {
             printf("Failed to open video writer\n");
