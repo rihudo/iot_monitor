@@ -1,3 +1,6 @@
 .vscode/
 monitor_client/build/
 monitor_receiver/build/
+video_service/go.mod
+video_service/go.sum
+video_service/video_service

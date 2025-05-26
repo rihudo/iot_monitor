@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>视频查看</title>
+    <style>
+        .video-list { margin: 20px; }
+        .video-item { 
+            padding: 10px; 
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-list">
+        <h2>视频目录</h2>
+        {{ range .videos }}
+            <div class="video-item" onclick="playVideo('{{ . }}')">{{ . }}</div>
+        {{ else }}
+            <div>暂无视频文件</div>
+        {{ end }}
+    </div>
+
+    <script>
+        function playVideo(filename) {
+            window.open(`/play/${filename}`, "_black")
+        }
+    </script>
+</body>
+</html>

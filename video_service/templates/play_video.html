@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{.video_time}}</title>
+    <style>
+        #player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div>{{.video_time}}</div>
+    <video autoplay id="player" width="640" height="360" controls>
+        <source id="videoSource" type="video/mp4" src="/videos/{{.video_name}}">
+        您的浏览器不支持视频播放
+    </video>
+</body>
+</html>
