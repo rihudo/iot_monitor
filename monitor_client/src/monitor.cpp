@@ -112,7 +112,7 @@ int start_monitor(uint8_t fps, uint32_t duration)
     uint32_t timer_count = 0;
     for (;!is_stoped;)
     {
-        snprintf(file_name, sizeof(file_name), "./%ld.mp4", time(NULL));
+        snprintf(file_name, sizeof(file_name), "voide_%ld.mp4", time(NULL));
         printf("File name:%s\n", file_name);
         writer.open(file_name, cv::VideoWriter::fourcc('a', 'v', 'c', '1'), fps, src.size(), src.type() == CV_8UC3);
         if (!writer.isOpened())

@@ -31,7 +31,7 @@ func main() {
 		videoList := make([]string, 0)
 		for _, f := range files {
 			if filepath.Ext(f.Name()) == ".mp4" { // 过滤 MP4 文件[1](@ref)
-				file_name := f.Name()[:strings.Index(f.Name(), ".")]
+				file_name := f.Name()[len("video_") :strings.Index(f.Name(), ".")]
 				timestamp, _ := strconv.ParseInt(file_name, 10, 64)
 				t := time.Unix(timestamp, 0)
 				time_str := t.Format("2006-01-02 15:04:05")
